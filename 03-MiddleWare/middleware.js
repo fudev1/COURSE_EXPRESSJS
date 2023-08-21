@@ -1,6 +1,7 @@
 const express = require('express');
 const { loggerMiddleware } = require('./middlewares/logger');
 const { authorize } = require('./middlewares/authorize');
+const { userRouter } = require('./user-router');
 
 const server = express();
 port = "8001";

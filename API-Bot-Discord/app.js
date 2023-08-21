@@ -1,13 +1,18 @@
 const express = require('express');
-const server = express();
-const port = "8002";
-const { versionRouter } = require('./Routers/version.router');
 const { citationsRouter } = require('./Routers/citations.router');
+const { forbiddenRouter } = require('./Routers/forbidden.router');
+const { dashRouter } = require('./Routers/dashboard.router');
+const { secretMiddleware } = require('./Middlewares/secretMiddleWare');
+port = "8080";
 
-// Mes liens Routers
-server.use(versionRouter);
+const server = express();
+
 server.use(citationsRouter);
+server.use('/dashboard', secretMiddleware)
+server.use('/dashboard', dashRouter);
+server.use('/forbidden', forbiddenRouter);
+
 
 server.listen(port, () => {
-    console.log(`Serveur à l'écoute sur ${port}`);
+    console.log(`Serveur ok sur le port ${port}`);
 });

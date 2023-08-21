@@ -26,8 +26,7 @@ db.once('open', () => {
     // par exemple, tu pourrais configurer tes routes Express ou démarrer le serveur
 
     // Importer le router pour les citations
-    const citationsRouter = require('./routers/citations.router');
-    const versionRouter = require('./routers/version.router');
+
     app.use('/citations', citationsRouter);
     app.use('/version', versionRouter);
 
