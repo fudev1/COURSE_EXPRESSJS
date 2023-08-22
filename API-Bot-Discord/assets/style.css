@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    margin: 0;
+}
+
+.col-1 {
+    background: #030303;
+    flex: 1;
+}
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.content > article {
+    flex: 4;
+    min-height: 80vh;
+}
+
+header {
+    background: url('./img/cover-discord-bot.png');
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+footer {
+    height: 80px;
+    padding: 20px;
+    background-color: #030303;
+
+}
+
+nav, header, footer, article {
+    padding: 1em;
+}
+
+ul li a{
+    display: block;
+    height: 35px;
+    background: #fff;
+}

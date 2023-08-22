@@ -1,13 +1,14 @@
-const { Router }= require('express');
+const { Router } = require('express');
+const path = require ('path');
 
 const forbiddenRouter = Router();
 
 
+
 forbiddenRouter.get('/',(request, response)=>{
-    response.send(`
-    <h1>You shall not passsssssss<//h1>
-    <p>Vous n'êtes pas autorisé à naviguer de ce côté-ci </p>
-    `)
+    response.sendFile(path.join(__dirname, '..', 'views', 'forbidden.html'));
 })
+
+
 
 exports.forbiddenRouter= forbiddenRouter;
